@@ -21,7 +21,7 @@ load_dotenv()
 LANG_MODEL = 'gpt-3.5-turbo-16k'
 EMBED_MODEL = 'text-embedding-ada-002'
 
-
+os.environ['OPENAI_API_KEY'] = st.secrets["OPENAI_API_KEY"]
 def text_splitter():
     return RecursiveCharacterTextSplitter(separators=['\n\n','\n','##','. ',', '], chunk_size=4096, chunk_overlap=500)
 
